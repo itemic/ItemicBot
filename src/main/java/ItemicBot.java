@@ -73,7 +73,7 @@ public class ItemicBot extends TelegramLongPollingBot{
                         JSONObject timesJson = new JSONObject(IOUtils.toString(response.getEntity().getContent(), Charset.defaultCharset()));
                         int currentTime = timesJson.getInt("currentTime");
                         JSONArray tripsArray = timesJson.getJSONArray("trips");
-                        System.out.println(tripsArray);
+//                        System.out.println(tripsArray);
                         for (int i = 0; i < Math.min(5, tripsArray.length()); i++) {
                             JSONObject trip = tripsArray.getJSONObject(i);
                             String headSign = trip.optString("trip_headsign", "ERR");
